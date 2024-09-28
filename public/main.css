@@ -9,5 +9,29 @@ body {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;   
+	color: white;                                                                    
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 10px;
+}
+li {
+	padding: 10px;
+	border: 1px solid tomato;
+	margin: 5px;
+	cursor: pointer;
+}
+.box {
+	width: 300px;
+	height: 300px;
+	max-width: 500px;
+	background-color: rgba(255, 99, 71, 0.231);
+	border: 1px solid tomato;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/public/main.css">
+</head>
+
+<body>
+
+
+
+	<ul class="box">
+		<li id="drag-1" draggable="true">test</li>
+		<li id="drag-2" draggable="true">test 2</li>
+		<li id="drag-3" draggable="true">test 3</li>
+		<li id="drag-4" draggable="true">test 4</li>
+	</ul>
+	<ul class="box" id="target">
+
+	</ul>
+	<script >
+		const items = document.querySelectorAll('[draggable="true"]');
+		const boxes = document.querySelectorAll('.box');
+		function dragstartHandler(e) {
+			e.dataTransfer.setData("text/plain", e.target.id);
+			e.dataTransfer.dropEffect = "move";
+		}
+
+		function dragoverHandler(ev) {
+			console.log("dragover");
+			ev.preventDefault();
+			ev.dataTransfer.dropEffect = "move";
+		}
+		function dropHandler(ev) {
+			ev.preventDefault();
+			const data = ev.dataTransfer.getData("text/plain");
+			ev.target.appendChild(document.getElementById(data));
+		}
+		boxes.forEach(box => {
+			box.addEventListener("drop", dropHandler);
+			box.addEventListener("dragover", dragoverHandler);
+		})
+		items.forEach(item => {
+			item.addEventListener("dragstart", dragstartHandler);
+		})
+	</script>
+</body>
+
+</html>

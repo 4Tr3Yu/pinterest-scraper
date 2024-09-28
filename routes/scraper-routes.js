@@ -1,9 +1,9 @@
 import { Router } from "express";
 import scraperController from "../controllers/scraper-controller";
-import { validateBodyMiddleware }  from '../middlewares/validate-body-midddleware'
+import { validateBodyMiddleware } from "../middlewares/validate-body-midddleware";
 const router = Router();
 
-router.post('/scrape', validateBodyMiddleware, scraperController.crawl);
-router.get('/docs', scraperController.docs);
+router.post("/scrape", validateBodyMiddleware, scraperController.scrape);
+router.get("/docs", scraperController.docs);
 
 export default router;
