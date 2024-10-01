@@ -1,5 +1,4 @@
-import path from "path";
-import scraperService from "../services/scraper-service";
+import scraperService from "../services/scraper-services.js";
 
 const scrape = async (req, res) => {
 	const { body } = req;
@@ -14,7 +13,10 @@ const scrape = async (req, res) => {
 };
 
 const docs = (req, res) => {
-	res.sendFile(path.join(__dirname, "..", "..", "components", "home.htm"));
+	res.render("layout", {
+		title: "Document 1",
+		body: '<%- include("docs/home.ejs") %>',
+	});
 };
 
 export default { scrape, docs };

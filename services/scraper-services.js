@@ -1,3 +1,6 @@
-const scraperServices = () => {};
+const scraperService = () => {
+	console.log("Scraper service is running");
+	return "oks";
+};
 
-export default scraperServices;
+export default scraperService;

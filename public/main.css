@@ -1,5 +1,5 @@
 * {
-	  box-sizing: border-box;
+	box-sizing: border-box;
 }
 body {
 	background-color: #111;
@@ -9,8 +9,8 @@ body {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;   
-	color: white;                                                                    
+	align-items: center;
+	color: white;
 }
 
 ul {
@@ -20,10 +20,13 @@ ul {
 	margin-right: 10px;
 }
 li {
+	transition: all 0.3s ease-in-out;
 	padding: 10px;
 	border: 1px solid tomato;
 	margin: 5px;
 	cursor: pointer;
+	background-color: black;
+	z-index: 100;
 }
 .box {
 	width: 300px;
