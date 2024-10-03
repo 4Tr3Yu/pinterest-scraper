@@ -9,7 +9,7 @@ This Node.js service uses Playwright to scrape images from Pinterest boards dyna
 
 ```bash
   npm install playwright
-
+```
 ## API Routes
 
 The scraper service exposes the following API routes:
@@ -33,9 +33,9 @@ The scraper service exposes the following API routes:
 		"url": "https://www.pinterest.com/board-url/",
 		"pins": 10
 	}
-
+```
 ### Response Example
-```bash
+```json
 	{
 	"result": [
 			{
@@ -49,7 +49,7 @@ The scraper service exposes the following API routes:
 			// ...more images
 		]
 	}
-
+```
 
 ## USage
 ### Function Signature
