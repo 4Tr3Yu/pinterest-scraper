@@ -2,8 +2,9 @@ import scraperService from "../services/scraper-services.js";
 
 const scrape = async (req, res) => {
 	const { body } = req;
+	const { url, pins } = body;
 	try {
-		const result = await scraperService(body);
+		const result = await scraperService(url, pins);
 		console.log("Result: ", result);
 		return res.status(200).json({ result });
 	} catch (error) {

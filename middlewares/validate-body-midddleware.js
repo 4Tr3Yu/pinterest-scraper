@@ -8,6 +8,7 @@ function sendErrorResponse(res, e) {
 
 const schema = Joi.object({
 	url: Joi.string().uri().required(),
+	pins: Joi.number().required(),
 });
 
 export const validateBodyMiddleware = (req, res, next) => {
