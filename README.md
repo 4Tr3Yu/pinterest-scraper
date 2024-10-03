@@ -17,7 +17,7 @@ The scraper service exposes the following API routes:
 ```POST /api/scrape```
 - Description: Scrapes a Pinterest board for a specified number of images.
 - Request Body:
-	- ```url``` (string): The Pinterest board URL to scrape.
+	- ```url``` (string): The Pinterest board URL to scrape, follow https://pinterest.com/```username``` , you can actually specify a ```/board``` here BUT **I havent tested what will happen if there are not enough pins to handle the requested amount**.
 	- ```pins  ``` (number): The number of images to scrape.
 - Response: A JSON array containing the scraped images with their src and alt attributes.
 
@@ -30,14 +30,14 @@ The scraper service exposes the following API routes:
 	Content-Type: application/json
 
 	{
-		"url": "https://www.pinterest.com/board-url/",
+		"url": "https://cl.pinterest.com/4tr3yumon/",
 		"pins": 10
 	}
 ```
 ### Response Example
 ```json
 	{
-	"result": [
+		"result": [
 			{
 				"src": "https://i.pinimg.com/some-image-url.jpg",
 				"alt": "Description of the image"
@@ -51,9 +51,7 @@ The scraper service exposes the following API routes:
 	}
 ```
 
-## USage
-### Function Signature
-
-```
-scraperService(url: string, pins: number): Promise<Array<{src: string, alt: string}>>
-```
+#### To Do
+- Maybe add different enpoint to handle different kinds of boards
+- Handle not enough pins in board
+- Do something with the templates 

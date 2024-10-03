@@ -5,10 +5,8 @@ const scrape = async (req, res) => {
 	const { url, pins } = body;
 	try {
 		const result = await scraperService(url, pins);
-		console.log("Result: ", result);
 		return res.status(200).json({ result });
 	} catch (error) {
-		console.log("Error: ", error);
 		return res.status(500).json({ error });
 	}
 };

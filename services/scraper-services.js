@@ -54,6 +54,7 @@ const scraperService = async (url, pins) => {
 		return latestImages;
 	} catch (error) {
 		console.log("Error: ", error);
+		return error;
 	}
 };
 
