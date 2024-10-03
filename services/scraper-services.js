@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 
 const scraperService = async (url, pins) => {
-	const browser = await chromium.launch({ headless: false });
+	const browser = await chromium.launch({ headless: true });
 	const context = await browser.newContext();
 	const page = await context.newPage();
 	let latestImages = [];
